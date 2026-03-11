@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suppliers | FreshFleet</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="icon" href="./favicon.png?v=2">
+</head>
+
+<body>
+  <!-- ── Navigation ── -->
+  <header>
+    <nav>
+      <div class="nav-brand">
+        <div class="nav-logo"><img src="./favicon.png" alt="logo"></div>
+        <span class="nav-brand-text">Fresh<span>Fleet</span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="transfers.html">Transfers</a></li>
+        <li><a href="suppliers.html" class="active">Suppliers</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ── Page Hero ── -->
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="fade-in"><i class="bi bi-people-fill"></i> Supplier Directory</h1>
+      <p class="fade-in fade-in-1">
+        View supplier profiles, contact information, product categories, and
+        delivery schedules for all active vendors.
+      </p>
+      <div class="page-hero-meta fade-in fade-in-2">
+        <span><i class="bi bi-building"></i> 6 Suppliers</span>
+        <span><i class="bi bi-archive-fill"></i> 6 Categories</span>
+        <span><i class="bi bi-truck-front-fill"></i> Weekly Deliveries</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Supplier Stats ── -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="stats-bar">
+        <div class="stat-item fade-in fade-in-1">
+          <span class="stat-value">6</span>
+          <div class="stat-label">Active Suppliers</div>
+          <div class="stat-delta up">↑ 2 new this year</div>
+        </div>
+        <div class="stat-item fade-in fade-in-2">
+          <span class="stat-value">6</span>
+          <div class="stat-label">Product Categories</div>
+        </div>
+        <div class="stat-item fade-in fade-in-3">
+          <span class="stat-value">97%</span>
+          <div class="stat-label">On-time Delivery</div>
+          <div class="stat-delta up">↑ Excellent</div>
+        </div>
+        <div class="stat-item fade-in fade-in-4">
+          <span class="stat-value">4.5<i class="bi bi-star-fill"></i></span>
+          <div class="stat-label">Avg Review Of Supplier</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Suppliers Grid ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">All Suppliers</h2>
+        <div style="display: flex; gap: 0.75rem">
+          <select id="supplier-filter" aria-label="Filter suppliers by category" style="
+                max-width: 200px;
+                padding: 0.5rem 1rem;
+                border: 2px solid var(--border);
+                border-radius: var(--radius);
+                background: var(--white);
+                font-family: inherit;
+                font-size: 0.9rem;
+              ">
+            <option value="all">All Categories</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Bakery">Bakery</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Meat">Meat</option>
+            <option value="Grains">Grains</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="suppliers-grid" id="suppliers-grid">
+        <!-- Supplier 1 -->
+        <article class="supplier-card fade-in fade-in-1" data-categories="Vegetables,Grains">
+          <div class="supplier-header">
+            <div class="supplier-avatar">🌿</div>
+            <div>
+              <div class="supplier-name">Krishnamurthy Agro Farms</div>
+              <div class="supplier-id">SUP-001 · Since 2018</div>
+            </div>
+          </div>
+          <div class="supplier-body">
+            <div class="supplier-info-row">
+              <span class="icon">📧</span>
+              <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7bca5bea4bfb9b6baa2a5a3bfaef9b6b0a5b897b0bab6bebbf9b4b8ba">[email&#160;protected]</a></span>
+            </div>
+            <div class="supplier-info-row">
+              <span class="icon">📞</span>
+              <span>+91 98451 23670</span>
+            </div>
+            <div class="supplier-info-row">
+              <span class="icon">📍</span>
+              <span>Nashik - Maharashtra</span>
+            </div>
+            <div class="supplier-tags">
+              <span class="tag">Vegetables</span>
+              <span class="tag">Grains</span>
+              <span class="tag">Organic Certified</span>
+            </div>
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Route</th>
+                  <th>Day</th>
+                  <th>Window</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Warehouse A</td>
+                  <td>Mon, Thu</td>
+                  <td>6:00-10:00 AM</td>
+                </tr>
+                <tr>
+                  <td>Store #1, #2</td>
+                  <td>Tue, Fri</td>
+                  <td>7:00-11:00 AM</td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top: 1rem; display: flex; gap: 0.5rem">
+              <button class="btn btn-outline" style="flex: 1; justify-content: center; font-size: 0.82rem"
+                onclick="showToast('📧 Contacting Krishnamurthy Agro Farms…')">
+                Contact
+              </button>
+              <button class="btn btn-primary" style="flex: 1; justify-content: center; font-size: 0.82rem" onclick="
+                    showToast('📋 Order form for Krishnamurthy Agro Farms opened')
+                  ">
+                Place Order
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Supplier 2 -->
+        <article class="supplier-card fade-in fade-in-2" data-categories="Dairy">
+          <div class="supplier-header">
+            <div class="supplier-avatar">🥛</div>
+            <div>
+              <div class="supplier-name">Amul Regional Distribution</div>
+              <div class="supplier-id">SUP-002 · Since 2020</div>
+            </div>
+          </div>
+          <div class="supplier-body">
+            <div class="supplier-info-row">
+              <span class="icon">📧</span>
+              <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="29465b4d4c5b5a6948445c454d48405b50074a4644">[email&#160;protected]</a></span>
+            </div>
+            <div class="supplier-info-row">
+              <span class="icon">📞</span>
+              <span>+91 99870 45231</span>
+            </div>
+            <div class="supplier-info-row">
+              <span class="icon">📍</span>
+              <span> Anand, Gujarat</span>
+            </div>
+            <div class="supplier-tags">
+              <span class="tag">Dairy</span>
+              <span class="tag">Milk</span>
+              <span class="tag">Yogurt</span>
+              <span class="tag">Cheese</span>
+            </div>
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Route</th>
+                  <th>Day</th>
+                  <th>Window</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Warehouse B</td>
+                  <td>Daily</td>
+                  <td>5:00-8:00 AM</td>
+                </tr>
+                <tr>
+                  <td>All Stores</td>
+                  <td>Mon-Sat</td>
+                  <td>6:00-9:00 AM</td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top: 1rem; display: flex; gap: 0.5rem">
+              <button class="btn btn-outline" style="flex: 1; justify-content: center; font-size: 0.82rem"
+                onclick="showToast('📧 Contacting Amul Regional Distribution…')">
+                Contact
+              </button>
+              <button class="btn btn-primary" style="flex: 1; justify-content: center; font-size: 0.82rem"
+                onclick="showToast('📋 Order form for Amul Regional Distribution opened')">
+                Place Order
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Supplier 3 -->
+        <article class="supplier-card fade-in fade-in-3" data-categories="Bakery">
+          <div class="supplier-header">
+            <div class="supplier-avatar">🍞</div>
+            <div>
+              <div class="supplier-name">Modern Bakehouse Pvt. Ltd.</div>
+              <div class="supplier-id">SUP-003 · Since 2019</div>
+            </div>
+          </div>
+          <div class="supplier-body">
+            <div class="supplier-info-row">
+              <span class="icon">📧</span>
+              <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="493a3c27203d280924262d2c3b272b28222c21263c3a2c672027">[email&#160;protected]</a></span>
+            </div>
+            <div class="supplier-info-row">
+              <span class="icon">📞</span>
+              <span>+91 91234 67890</span>
+            </div>
+            <div class="supplier-info-row">
+              <span class="icon">📍</span>
+              <span>Pune - Maharashtra</span>
+            </div>
+            <div class="supplier-tags">
+              <span class="tag">Bakery</span>
+              <span class="tag">Artisan Bread</span>
+              <span class="tag">Pastries</span>
+            </div>
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Route</th>
+                  <th>Day</th>
+                  <th>Window</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Store #2, #3</td>
+                  <td>Daily</td>
+                  <td>4:00-7:00 AM</td>
+                </tr>
+                <tr>
+                  <td>Warehouse A</td>
+                  <td>Mon, Wed, Fri</td>
+                  <td>5:00-8:00 AM</td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top: 1rem; display: flex; gap: 0.5rem">
+              <button class="btn btn-outline" style="flex: 1; justify-content: center; font-size: 0.82rem"
+                onclick="showToast('📧 Contacting Modern Bakehouse Pvt. Ltd…')">
+                Contact
+              </button>
+              <button class="btn btn-primary" style="flex: 1; justify-content: center; font-size: 0.82rem"
+                onclick="showToast('📋 Order form for Modern Bakehouse opened')">
+                Place Order
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Supplier 4 -->
+        <article class="supplier-card fade-in fade-in-4" data-categories="Seafood">
+          <div class="supplier-header">
+            <div class="supplier-avatar">🐟</div>
+            <div>
+              <div class="supplier-name">Coastal Fresh Exports</div>
+              <div class="supplier-id">SUP-004 · Since 2021</div>
+            </div>
+          </div>
+          <div class="supplier-body">
+            <div class="supplier-info-row">
+              <span class="icon">📧</span>
+              <span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe8d8e9f8a9792be9d919f8d8a9f92988c9b8d96d09790">[email&#160;protected]</a></span>
+            </div>
+            <div class="supplier-info-row">
+              <span class="icon">📞</span>
+              <span>+91 94460 78912</span>
+            </div>
+            <div class="supplier-info-row">
+              <span class="icon">📍</span>
+              <span>Mumbai - Maharashtra</span>
+            </div>
+            <div class="supplier-tags">
+              <span class="tag">Seafood</span>
+              <span class="tag">Salmon</span>
+              <span class="tag">Tuna</span>
+              <span class="tag">MSC Certified</span>
+            </div>
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Route</th>
+                  <th>Day</th>
+                  <th>Window</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Warehouse B</td>
+                  <td>Tue, Thu, Sat</td>
+                  <td>4:00-7:00 AM</td>
+                </tr>
+                <tr>
+                  <td>Store #3</td>
+                  <td>Tue, Fri</td>
+                  <td>6:00-9:00 AM</td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top: 1rem; display: flex; gap: 0.5rem">
+              <button class="btn btn-outline" style="flex: 1; justify-content: center; font-size: 0.82rem"
+                onclick="showToast('📧 Contacting Coastal Fresh Exports…')">
+                Contact
+              </button>
+              <button class="btn btn-primary" style="flex: 1; justify-content: center; font-size: 0.82rem"
+                onclick="showToast('📋 Order form for Coastal Fresh Exports opened')">
+                Place Order
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Supplier 5 -->
+        <article class="supplier-card fade-in fade-in-5" data-categories="Meat">
+          <div class="supplier-header">
+            <div class="supplier-avatar">🥩</div>
+            <div>
+              <div class="supplier-name">Farooq Meats</div>
+              <div class="supplier-id">SUP-005 · Since 2017</div>
+            </div>
+          </div>
+          <div class="supplier-body">
+            <div class="supplier-info-row">
+              <span class="icon">📧</span>
+              <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="83ecf1e7e6f1f0c3eee5e2f1ececf2ade0ecee">[email&#160;protected]</a></span>
+            </div>
+            <div class="supplier-info-row">
+              <span class="icon">📞</span>
+              <span>+91 9472008526</span>
+            </div>
+            <div class="supplier-info-row">
+              <span class="icon">📍</span>
+              <span>Thane - Maharashtra</span>
+            </div>
+            <div class="supplier-tags">
+              <span class="tag">Meat</span>
+              <span class="tag">Poultry</span>
+              <span class="tag">Free-range</span>
+            </div>
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Route</th>
+                  <th>Day</th>
+                  <th>Window</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Warehouse A, B</td>
+                  <td>Mon, Wed, Fri</td>
+                  <td>3:00-7:00 AM</td>
+                </tr>
+                <tr>
+                  <td>All Stores</td>
+                  <td>Tue, Thu, Sat</td>
+                  <td>5:00-9:00 AM</td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top: 1rem; display: flex; gap: 0.5rem">
+              <button class="btn btn-outline" style="flex: 1; justify-content: center; font-size: 0.82rem"
+                onclick="showToast('📧 Contacting Farooq Meats …')">
+                Contact
+              </button>
+              <button class="btn btn-primary" style="flex: 1; justify-content: center; font-size: 0.82rem"
+                onclick="showToast('📋 Order form for Farooq Meats opened')">
+                Place Order
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Supplier 6 -->
+        <article class="supplier-card fade-in" data-categories="Grains,Condiments">
+          <div class="supplier-header">
+            <div class="supplier-avatar">🌾</div>
+            <div>
+              <div class="supplier-name">Grains and Staples</div>
+              <div class="supplier-id">SUP-006 · Since 2016</div>
+            </div>
+          </div>
+          <div class="supplier-body">
+            <div class="supplier-info-row">
+              <span class="icon">📧</span>
+              <span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cfa7aebdbfbdaaaabb8fbfbaa1a5aeadbbbdaeabaabce1a6a1">[email&#160;protected]</a></span>
+            </div>
+            <div class="supplier-info-row">
+              <span class="icon">📞</span>
+              <span> +91 98140 56783</span>
+            </div>
+            <div class="supplier-info-row">
+              <span class="icon">📍</span>
+              <span>Ludhiana - Punjab </span>
+            </div>
+            <div class="supplier-tags">
+              <span class="tag">Grains</span>
+              <span class="tag">Rice</span>
+              <span class="tag">Pasta</span>
+              <span class="tag">Condiments</span>
+              <span class="tag">Olive Oil</span>
+            </div>
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Route</th>
+                  <th>Day</th>
+                  <th>Window</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Warehouse A</td>
+                  <td>Mon</td>
+                  <td>8:00 AM-12:00 PM</td>
+                </tr>
+                <tr>
+                  <td>All Stores</td>
+                  <td>Wed</td>
+                  <td>9:00 AM-1:00 PM</td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top: 1rem; display: flex; gap: 0.5rem">
+              <button class="btn btn-outline" style="flex: 1; justify-content: center; font-size: 0.82rem"
+                onclick="showToast('📧 Contacting Grains and Staples…')">
+                Contact
+              </button>
+              <button class="btn btn-primary" style="flex: 1; justify-content: center; font-size: 0.82rem"
+                onclick="showToast('📋 Order form for Grains and Staples opened')">
+                Place Order
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-brand">
+          <div class="nav-logo"><img src="./favicon.png" alt="logo"></div>
+          <span class="nav-brand-text">Fresh<span>Fleet</span></span>
+        </div>
+        <p>Enterprise-grade grocery supply chain management for warehouses and retail operators.</p>
+      </div>
+      <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FreshFleet Inc. All rights reserved.</span>
+      <span>Retail Logistics Platform · v2.4.1</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

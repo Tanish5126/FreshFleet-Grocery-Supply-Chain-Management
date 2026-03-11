@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Transfers | FreshFleet</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" href="./favicon.png?v=2">
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<header>
+  <nav>
+    <div class="nav-brand">
+      <div class="nav-logo"><img src="./favicon.png" alt="logo"></div>
+      <span class="nav-brand-text">Fresh<span>Fleet</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="inventory.html">Inventory</a></li>
+      <li><a href="transfers.html" class="active">Transfers</a></li>
+      <li><a href="suppliers.html">Suppliers</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ── Page Hero ── -->
+<div class="page-hero">
+  <div class="container">
+    <h1 class="fade-in"><i class="bi bi-arrows"></i> Stock Transfers</h1>
+    <p class="fade-in fade-in-1">Move inventory between warehouses and stores. Real-time summaries update as you fill in the form.</p>
+    <div class="page-hero-meta fade-in fade-in-2">
+      <span><i class="bi bi-geo"></i> 5 Locations</span>
+      <span><i class="bi bi-journal-check"></i> Real-time Updates</span>
+      <span><i class="bi bi-alarm"></i> Full Transfer Log</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Transfer Stats ── -->
+<section class="section-sm">
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat-item fade-in fade-in-1">
+        <span class="stat-value" id="stat-transfers">0</span>
+        <div class="stat-label">Total Transfers</div>
+      </div>
+      <div class="stat-item fade-in fade-in-2">
+        <span class="stat-value" id="stat-moved">0</span>
+        <div class="stat-label">Units Moved</div>
+      </div>
+      <div class="stat-item fade-in fade-in-3">
+        <span class="stat-value">5</span>
+        <div class="stat-label">Active Locations</div>
+      </div>
+      <div class="stat-item fade-in fade-in-4">
+        <span class="stat-value">12</span>
+        <div class="stat-label">Available SKUs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Main Layout ── -->
+<section class="section">
+  <div class="container">
+    <div class="transfers-layout">
+
+      <!-- Transfer Form -->
+      <div>
+        <div class="section-header">
+          <h2 class="section-title">New Transfer</h2>
+        </div>
+        <div class="transfer-form-card">
+          <div class="card-header">
+            <h3><i class="bi bi-archive-fill"></i> Transfer Details</h3>
+            <span class="badge badge-ok">Ready</span>
+          </div>
+          <div class="card-body">
+            <form id="transfer-form" novalidate>
+
+              <div class="form-group">
+                <label for="tf-product">Product *</label>
+                <select id="tf-product" required aria-label="Select product to transfer">
+                  <option value="">— Select a product —</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="tf-from">Transfer From *</label>
+                  <select id="tf-from" required aria-label="Source location">
+                    <option value="">— Select source —</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="tf-to">Transfer To *</label>
+                  <select id="tf-to" required aria-label="Destination location">
+                    <option value="">— Select destination —</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="tf-qty">Quantity to Transfer *</label>
+                <input type="number" id="tf-qty" min="1" placeholder="Enter quantity…" required aria-label="Quantity to transfer">
+                <div class="form-hint">Enter the number of units to move. Cannot exceed available stock at source.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="tf-notes">Transfer Notes (optional)</label>
+                <textarea id="tf-notes" rows="3" placeholder="Add any notes or instructions…" aria-label="Transfer notes"></textarea>
+              </div>
+
+              <!-- Live Preview -->
+              <div id="transfer-preview"></div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+                <i class="bi bi-truck"></i> Initiate Transfer
+              </button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transfer Log -->
+      <div>
+        <div class="section-header">
+          <h2 class="section-title">Transfer Log</h2>
+          <span class="badge badge-ok" id="log-count-badge">0 transfers</span>
+        </div>
+
+        <div id="transfer-log">
+          <div class="summary-empty">
+            <div class="icon"><i class="bi bi-archive-fill"></i></div>
+            <p>No transfers yet. Use the form to initiate a stock transfer.</p>
+          </div>
+        </div>
+
+        <!-- Instructions card -->
+        <div class="card" style="margin-top:1.5rem">
+          <div class="card-header">
+            <h3><i class="bi bi-journal-x"></i> How Transfers Work</h3>
+          </div>
+          <div class="card-body">
+            <ol style="padding-left:1.25rem;color:var(--text-mid);font-size:.9rem;line-height:2">
+              <li>Select the product you want to move.</li>
+              <li>Choose the <strong>source</strong> location and <strong>destination</strong>.</li>
+              <li>Enter the quantity to transfer.</li>
+              <li>Review the live preview showing stock after transfer.</li>
+              <li>Click <strong>Initiate Transfer</strong> to confirm.</li>
+              <li>The transfer appears in the log and inventory updates immediately.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-brand">
+          <div class="nav-logo"><img src="./favicon.png" alt="logo"></div>
+          <span class="nav-brand-text">Fresh<span>Fleet</span></span>
+        </div>
+        <p>Enterprise-grade grocery supply chain management for warehouses and retail operators.</p>
+      </div>
+      <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FreshFleet Inc. All rights reserved.</span>
+      <span>Retail Logistics Platform · v2.4.1</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

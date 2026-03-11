@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | FreshFleet</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" href="./favicon.png?v=2">
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<header>
+  <nav>
+    <div class="nav-brand">
+      <div class="nav-logo"><img src="./favicon.png" alt="logo"></div>
+      <span class="nav-brand-text">Fresh<span>Fleet</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="inventory.html">Inventory</a></li>
+      <li><a href="transfers.html">Transfers</a></li>
+      <li><a href="suppliers.html">Suppliers</a></li>
+      <li><a href="contact.html" class="active nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ── Page Hero ── -->
+<div class="page-hero">
+  <div class="container">
+    <h1 class="fade-in"><i class="bi bi-person-rolodex"></i> Contact & Support</h1>
+    <p class="fade-in fade-in-1">Get in touch with our team for inquiries, technical support, or subscription information. We respond within 24 hours.</p>
+    <div class="page-hero-meta fade-in fade-in-2">
+      <span><i class="bi bi-chat-dots"></i> 24hr Response</span>
+      <span><i class="bi bi-hammer"></i> Technical Support</span>
+      <span><i class="bi bi-credit-card-2-front"></i> SaaS Subscriptions</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Contact Layout ── -->
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Left: Info Panel -->
+      <aside>
+        <div class="section-header" style="margin-bottom:1.5rem">
+          <h2 class="section-title">Get In Touch</h2>
+        </div>
+
+        <div class="contact-detail-item fade-in fade-in-1">
+          <div class="contact-detail-icon"><i class="bi bi-envelope-at-fill"></i></div>
+          <div class="contact-detail-text">
+            <strong>Email Support</strong>
+            <span>support@freshfleet.io</span>
+          </div>
+        </div>
+        <div class="contact-detail-item fade-in fade-in-2">
+          <div class="contact-detail-icon"><i class="bi bi-telephone-fill"></i></div>
+          <div class="contact-detail-text">
+            <strong>Phone Support</strong>
+            <span>+91 9866872436 · Mon-Fri 8am-6pm PST</span>
+          </div>
+        </div>
+        <div class="contact-detail-item fade-in fade-in-3">
+          <div class="contact-detail-icon"><i class="bi bi-chat-fill"></i></div>
+          <div class="contact-detail-text">
+            <strong>Live Chat</strong>
+            <span>Available in-app · Average wait: 2 min</span>
+          </div>
+        </div>
+        <div class="contact-detail-item fade-in fade-in-4">
+          <div class="contact-detail-icon"><i class="bi bi-geo-alt-fill"></i></div>
+          <div class="contact-detail-text">
+            <strong>Headquarters</strong>
+            <span>Bandra-Kurla Complex - Mumbai</span>
+          </div>
+        </div>
+
+        <!-- SaaS Subscription Plans -->
+        <div style="margin-top:2.5rem">
+          <div class="section-header" style="margin-bottom:1.5rem">
+            <h2 class="section-title">SaaS Monthly Plans</h2>
+          </div>
+          <div class="subscription-plans">
+
+            <div class="plan-card fade-in fade-in-1">
+              <div class="plan-name">Starter</div>
+              <div class="plan-price">$49<span>/mo</span></div>
+              <ul class="plan-features">
+                <li>Up to 2 locations</li>
+                <li>500 SKU limit</li>
+                <li>Basic alerts</li>
+                <li>Email support</li>
+              </ul>
+              <button class="btn btn-outline plan-select-btn" data-plan="Starter" style="width:100%;justify-content:center;font-size:.82rem">Select Plan</button>
+            </div>
+
+            <div class="plan-card featured fade-in fade-in-2">
+              <div class="plan-badge"></i>✨Most Popular</div>
+              <div class="plan-name">Professional</div>
+              <div class="plan-price">$149<span>/mo</span></div>
+              <ul class="plan-features">
+                <li>Up to 10 locations</li>
+                <li>Unlimited SKUs</li>
+                <li>Advanced alerts</li>
+                <li>Transfer management</li>
+                <li>Priority support</li>
+              </ul>
+              <button class="btn btn-primary plan-select-btn" data-plan="Professional" style="width:100%;justify-content:center;font-size:.82rem">Select Plan</button>
+            </div>
+
+            <div class="plan-card fade-in fade-in-3">
+              <div class="plan-name">Enterprise</div>
+              <div class="plan-price">$399<span>/mo</span></div>
+              <ul class="plan-features">
+                <li>Unlimited locations</li>
+                <li>Custom integrations</li>
+                <li>API access</li>
+                <li>Dedicated manager</li>
+                <li>SLA guarantee</li>
+              </ul>
+              <button class="btn btn-outline plan-select-btn" data-plan="Enterprise" style="width:100%;justify-content:center;font-size:.82rem">Contact Sales</button>
+            </div>
+
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right: Contact Form -->
+      <div>
+        <div class="section-header" style="margin-bottom:1.5rem">
+          <h2 class="section-title">Send an Inquiry</h2>
+        </div>
+
+        <div class="card fade-in fade-in-1">
+          <div class="card-header">
+            <h3><i class="bi bi-pencil-fill"></i> Inquiry Form</h3>
+            <span class="badge badge-ok">We respond within 24h</span>
+          </div>
+          <div class="card-body">
+            <div id="contact-result" style="display:none"></div>
+            <form id="contact-form" novalidate>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="ct-name">Full Name *</label>
+                  <input type="text" id="ct-name" placeholder="Rohan Joshi" required aria-label="Full name">
+                </div>
+                <div class="form-group">
+                  <label for="ct-email">Email Address *</label>
+                  <input type="email" id="ct-email" placeholder="rohan@company.com" required aria-label="Email address">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="ct-company">Company / Organization</label>
+                  <input type="text" id="ct-company" placeholder="Your company name" aria-label="Company name">
+                </div>
+                <div class="form-group">
+                  <label for="ct-phone">Phone Number</label>
+                  <input type="tel" id="ct-phone" placeholder="+91 9238490820" aria-label="Phone number">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="ct-subject">Subject / Inquiry Type *</label>
+                <select id="ct-subject" required aria-label="Subject of inquiry">
+                  <option value="">— Select a subject —</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="ct-plan">Interested Plan (optional)</label>
+                <select id="ct-plan" aria-label="Select subscription plan of interest">
+                  <option value="">— Not sure yet —</option>
+                  <option value="Starter">Starter - $49/mo</option>
+                  <option value="Professional">Professional - $149/mo</option>
+                  <option value="Enterprise">Enterprise - $399/mo</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="ct-message">Message *</label>
+                <textarea id="ct-message" rows="5" placeholder="Describe your inquiry in detail. Include your current setup, number of locations, and any specific requirements…" required aria-label="Message"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label style="display:flex;align-items:center;gap:.6rem;font-weight:400;cursor:pointer">
+                  <input type="checkbox" id="ct-subscribe" style="width:auto">
+                  Subscribe to FreshFleet product updates and newsletters
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+                <i class="bi bi-chat-left-text-fill"></i></i> Submit Inquiry
+              </button>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div style="margin-top:2rem" class="fade-in fade-in-2">
+          <h3 style="margin-bottom:1rem">Frequently Asked Questions</h3>
+          <div id="faq-list">
+            <div class="faq-item" style="border:1px solid var(--border);border-radius:var(--radius);margin-bottom:.75rem;overflow:hidden">
+              <button class="faq-toggle" style="width:100%;padding:1rem 1.25rem;background:var(--white);border:none;text-align:left;font-weight:600;font-size:.9rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit">
+                Can I upgrade or downgrade my plan at any time?
+                <span>+</span>
+              </button>
+              <div class="faq-body" style="display:none;padding:0 1.25rem 1rem;font-size:.9rem;color:var(--text-mid)">
+                Yes! You can change your plan at any time from your account settings. Upgrades take effect immediately, and downgrades take effect at the start of your next billing cycle.
+              </div>
+            </div>
+            <div class="faq-item" style="border:1px solid var(--border);border-radius:var(--radius);margin-bottom:.75rem;overflow:hidden">
+              <button class="faq-toggle" style="width:100%;padding:1rem 1.25rem;background:var(--white);border:none;text-align:left;font-weight:600;font-size:.9rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit">
+                Is there a free trial available?
+                <span>+</span>
+              </button>
+              <div class="faq-body" style="display:none;padding:0 1.25rem 1rem;font-size:.9rem;color:var(--text-mid)">
+                We offer a 14-day free trial on all plans with no credit card required. Full access to all features during the trial period.
+              </div>
+            </div>
+            <div class="faq-item" style="border:1px solid var(--border);border-radius:var(--radius);margin-bottom:.75rem;overflow:hidden">
+              <button class="faq-toggle" style="width:100%;padding:1rem 1.25rem;background:var(--white);border:none;text-align:left;font-weight:600;font-size:.9rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit">
+                What integrations are supported?
+                <span>+</span>
+              </button>
+              <div class="faq-body" style="display:none;padding:0 1.25rem 1rem;font-size:.9rem;color:var(--text-mid)">
+                FreshFleet integrates with major ERP systems including SAP, Oracle, and QuickBooks. API access is available on Professional and Enterprise plans for custom integrations.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-brand">
+          <div class="nav-logo"><img src="./favicon.png" alt="logo"></div>
+          <span class="nav-brand-text">Fresh<span>Fleet</span></span>
+        </div>
+        <p>Enterprise-grade grocery supply chain management for warehouses and retail operators.</p>
+      </div>
+      <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FreshFleet Inc. All rights reserved.</span>
+      <span>Retail Logistics Platform · v2.4.1</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

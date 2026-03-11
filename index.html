@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreshFleet | Grocery Supply Chain Management</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="icon" href="./favicon.png?v=3">
+
+</head>
+
+<body>
+  
+  <!-- ── Navigation ── -->
+  <header>
+    <nav>
+      <div class="nav-brand">
+        <div class="nav-logo"><img src="./favicon.png" alt="logo"></div>
+        <span class="nav-brand-text">Fresh<span>Fleet</span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="transfers.html">Transfers</a></li>
+        <li><a href="suppliers.html">Suppliers</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+    <!-- ── Low-stock Ticker ── -->
+  <div class="ticker-bar">
+    <div class="ticker-inner"></div>
+  </div>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="./hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-eyebrow fade-in">
+            <i class="bi bi-truck"></i>Real-time Supply Chain Platform
+          </div>
+          <h1 class="hero-title fade-in fade-in-1">
+            Smarter Grocery<br /><span>Supply Chains</span>
+          </h1>
+          <p class="hero-desc fade-in fade-in-2">
+            FreshFleet connects warehouse managers and store operators with
+            real-time inventory tracking, intelligent low-stock alerts, and
+            seamless stock transfer management.
+          </p>
+          <div class="hero-btns fade-in fade-in-3">
+            <a href="inventory.html" class="btn btn-primary"><i class="bi bi-box-seam-fill"></i> View Inventory</a>
+            <a href="transfers.html" class="btn btn-secondary"><i class="bi bi-arrow-left-right"></i> Manage
+              Transfers</a>
+          </div>
+        </div>
+
+        <div class="hero-visual fade-in fade-in-2">
+          <div class="hero-card">
+            <div class="hero-card-label">Live Inventory Overview</div>
+            <div class="hero-card-value" data-count="12">0</div>
+            <div class="hero-card-sub">
+              Active SKUs monitored across 5 locations
+            </div>
+          </div>
+          <div class="hero-card-grid">
+            <div class="hero-mini-card">
+              <div class="val" style="color: #c0392b" id="stat-critical">
+                0
+              </div>
+              <div class="lbl">Critical</div>
+            </div>
+            <div class="hero-mini-card">
+              <div class="val" style="color: #e8a020" id="stat-low">0</div>
+              <div class="lbl">Low Stock</div>
+            </div>
+            <div class="hero-mini-card">
+              <div class="val" style="color: #4a8c3f" id="stat-ok">0</div>
+              <div class="lbl">In Stock</div>
+            </div>
+            <div class="hero-mini-card">
+              <div class="val" style="color: beige;" id="stat-total">0</div>
+              <div class="lbl">Total SKUs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── Stats Bar ── -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="stats-bar">
+        <div class="stat-item fade-in fade-in-1">
+          <span class="stat-value" data-count="5">0</span>
+          <div class="stat-label">Distribution Points</div>
+          <div class="stat-delta up">↑ 2 new this quarter</div>
+        </div>
+        <div class="stat-item fade-in fade-in-2">
+          <span class="stat-value" data-count="98.4">0</span>
+          <div class="stat-label">Order Accuracy %</div>
+          <div class="stat-delta up">↑ 0.6% vs last month</div>
+        </div>
+        <div class="stat-item fade-in fade-in-3">
+          <span class="stat-value" data-count="247">0</span>
+          <div class="stat-label">Transfers This Week</div>
+          <div class="stat-delta up">↑ 14% activity</div>
+        </div>
+        <div class="stat-item fade-in fade-in-4">
+          <span class="stat-value" data-count="16">0</span>
+          <div class="stat-label">Active Suppliers</div>
+          <div class="stat-delta down">↓ 1 on review</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Features ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Platform Capabilities</h2>
+          <p style="color: var(--text-mid); margin-top: 0.75rem">
+            Everything you need to manage your grocery supply chain
+          </p>
+        </div>
+        <a href="inventory.html" class="btn btn-outline">Explore All →</a>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card fade-in fade-in-1">
+          <div class="feature-icon green"><i class="bi bi-bar-chart-line-fill"></i></div>
+          <h3>Live Inventory Tracking</h3>
+          <p>
+            Monitor stock levels across all warehouses and stores in real
+            time. Automated alerts fire when quantities drop below minimum
+            thresholds.
+          </p>
+        </div>
+        <div class="feature-card fade-in fade-in-2">
+          <div class="feature-icon amber"><i class="bi bi-arrow-left-right"></i></div>
+          <h3>Stock Transfer Management</h3>
+          <p>
+            Initiate and track inventory movements between locations.
+            Real-time summaries keep both origin and destination updated
+            instantly.
+          </p>
+        </div>
+        <div class="feature-card fade-in fade-in-3">
+          <div class="feature-icon red"><i class="bi bi-alarm"></i></div>
+          <h3>Smart Low-Stock Alerts</h3>
+          <p>
+            Visually distinct critical and low-stock indicators ensure
+            managers never miss a shortfall. Color-coded rows make priority
+            clear at a glance.
+          </p>
+        </div>
+        <div class="feature-card fade-in fade-in-4">
+          <div class="feature-icon green"><i class="bi bi-people-fill"></i></div>
+          <h3>Supplier Directory</h3>
+          <p>
+            Comprehensive supplier profiles with contact information, product
+            categories, delivery schedules and performance history.
+          </p>
+        </div>
+        <div class="feature-card fade-in fade-in-5">
+          <div class="feature-icon amber"><i class="bi bi-tablet"></i></div>
+          <h3>Responsive Design</h3>
+          <p>
+            Fully responsive interface works seamlessly on desktop, tablet,
+            and mobile. Manage your supply chain from anywhere.
+          </p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon red"><i class="bi bi-credit-card-2-front"></i></div>
+          <h3>SaaS Subscription Plans</h3>
+          <p>
+            Flexible monthly plans for operations of any size. From
+            single-store operators to multi-warehouse enterprise deployments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Quick Actions Banner ── -->
+  <section style="background: var(--green-mid); padding: 3rem 0; margin: 0">
+    <div class="container" style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 1.5rem;
+        ">
+      <div>
+        <h2 style="color: var(--white); font-size: 1.6rem">
+          Ready to streamline your supply chain?
+        </h2>
+        <p style="color: rgba(255, 255, 255, 0.75); margin-top: 0.5rem">
+          Get started with FreshFleet today — no setup fee, cancel anytime.
+        </p>
+      </div>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+        <a href="contact.html" class="btn btn-primary">Get Started</a>
+        <a href="suppliers.html" class="btn btn-secondary">View Suppliers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-brand">
+            <div class="nav-logo"><img src="./favicon.png" alt="logo"></div>
+            <span class="nav-brand-text">Fresh<span>Fleet</span></span>
+          </div>
+          <p>
+            Enterprise-grade grocery supply chain management for warehouses
+            and retail operators. Real-time visibility, intelligent alerts,
+            seamless transfers.
+          </p>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 FreshFleet Inc. All rights reserved.</span>
+        <span>Retail Logistics Platform · v2.4.1</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

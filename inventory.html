@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory - FreshFleet</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="icon" href="./favicon.png?v=2">
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<header>
+  <nav>
+    <div class="nav-brand">
+      <div class="nav-logo"><img src="./favicon.png?v=2" alt="logo"></div>
+      <span class="nav-brand-text">Fresh<span>Fleet</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="inventory.html" class="active">Inventory</a></li>
+      <li><a href="transfers.html">Transfers</a></li>
+      <li><a href="suppliers.html">Suppliers</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ── Page Hero ── -->
+<div class="page-hero">
+  <div class="container">
+    <h1 class="fade-in"><i class="bi bi-box-seam-fill"></i> Inventory Management</h1>
+    <p class="fade-in fade-in-1">Track product levels, monitor low-stock alerts, and update quantities across all locations in real time.</p>
+    <div class="page-hero-meta fade-in fade-in-2">
+      <span><i class="bi bi-geo-alt-fill"></i> 5 Locations</span>
+      <span><i class="bi bi-journal-x"></i> 12 Active SKUs</span>
+      <span><i class="bi bi-alarm"></i> Live Updates</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Summary Stats ── -->
+<section class="section-sm">
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat-item fade-in fade-in-1">
+        <span class="stat-value" id="sum-total">12</span>
+        <div class="stat-label">Total SKUs</div>
+      </div>
+      <div class="stat-item fade-in fade-in-2">
+        <span class="stat-value" style="color:var(--red-alert)" id="sum-critical">2</span>
+        <div class="stat-label">Critical Items</div>
+      </div>
+      <div class="stat-item fade-in fade-in-3">
+        <span class="stat-value" style="color:var(--amber)" id="sum-low">5</span>
+        <div class="stat-label">Low Stock</div>
+      </div>
+      <div class="stat-item fade-in fade-in-4">
+        <span class="stat-value" style="color:var(--green-light)" id="sum-ok">5</span>
+        <div class="stat-label">Well Stocked</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Live Stock Alerts Panel ── -->
+<section class="section-sm" style="padding-top:0">
+  <div class="container">
+    <div id="alerts-panel">
+      <!-- Populated by script.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ── Inventory Table ── -->
+<section class="section" style="padding-top:1rem">
+  <div class="container">
+
+    <!-- Controls -->
+    <div class="inventory-controls fade-in">
+      <div class="search-box">
+        <input type="text" id="inv-search" placeholder="Search by product name or SKU…" aria-label="Search inventory">
+      </div>
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="critical">🔴 Critical</button>
+        <button class="filter-btn" data-filter="low">🟡 Low</button>
+        <button class="filter-btn" data-filter="ok">🟢 In Stock</button>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div style="display:flex;gap:1rem;margin-bottom:1rem;flex-wrap:wrap" class="fade-in">
+      <span class="badge badge-ok">🟢 In Stock — qty &gt; 2 × threshold</span>
+      <span class="badge badge-low">🟡 Low — qty ≤ threshold</span>
+      <span class="badge badge-critical">🔴 Critical — qty ≤ 30% threshold</span>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrapper fade-in fade-in-1">
+      <table>
+        <thead>
+          <tr>
+            <th>Product / SKU</th>
+            <th>Category</th>
+            <th>Store Allocation</th>
+            <th>Quantity Available</th>
+            <th>Update Qty</th>
+            <th>Alert Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="inventory-tbody">
+          <!-- Populated by script.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Bulk actions -->
+    <div style="display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap" class="fade-in fade-in-2">
+      <a href="transfers.html" class="btn btn-outline">↔ Transfer Stock</a>
+      <button class="btn btn-outline" style="margin-left:auto;color:var(--red-alert);border-color:var(--red-alert)" onclick="resetInventory()"><i class="bi bi-arrow-clockwise"></i> Reset to Defaults</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-brand">
+          <div class="nav-logo"><img src="./favicon.png?v=2" alt="logo"></div>
+          <span class="nav-brand-text">Fresh<span>Fleet</span></span>
+        </div>
+        <p>Enterprise-grade grocery supply chain management for warehouses and retail operators.</p>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FreshFleet Inc. All rights reserved.</span>
+      <span>Retail Logistics Platform · v2.4.1</span>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
