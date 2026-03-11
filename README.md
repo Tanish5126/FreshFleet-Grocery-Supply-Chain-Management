@@ -1,6 +1,6 @@
 # 🥬 FreshFleet — Grocery Supply Chain Management
 
-Vercel : fresh-fleet-grocery-supply-chain-ma.vercel.app
+Vercel : https://fresh-fleet-grocery-supply-chain-ma.vercel.app/
 
 > A fully responsive, multi-page SaaS web application for warehouse managers and retail store operators to track inventory, manage stock transfers, monitor low-stock alerts, and view supplier details.
 
