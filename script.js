@@ -45,12 +45,6 @@ window.resetInventory = function () {
   transferLog.length = 0;
   saveInventory();
   showToast('✓ Inventory reset to default values.');
-  renderAlertsPanel();
-  const tbody = document.getElementById('inventory-tbody');
-  if (tbody) {
-    const event = new Event('resetrender');
-    document.dispatchEvent(event);
-  }
   window.location.reload();
 };
 
